@@ -1,1 +1,33 @@
 <h1>Take Survey</h1>
+
+<%= form_with scope: :surveys, local: true do |form| %>
+	<p>
+		<%= form.label :name %>&nbsp;
+		<%= form.text_field :name %>
+	</p>
+
+	<p>
+		I will answer as a...<br>
+		<%= form.radio_button :type, 'developer', :checked => true %> 
+		<%= label :type_developer, 'Developer' %>
+		<%= form.radio_button :type, 'user' %>
+		<%= label :type_user, 'User' %>
+	</p>
+<% end %>
+
+<p>
+	The following are the definitions of each quality factor as stated in the journal <em>“Customizing ISO 9126 quality model for evaluation of B2B applications”</em> to give a better understanding:<br>
+<ul>
+	<li><strong>Functionality</strong> - a set of attributes that bear on the existence of a set of functions and their specified properties</li>
+	<li><strong>Reliability</strong> - a set of attributes that bear on the capability of software to maintain its level of performance under stated conditions for a stated period of time.</li>
+	<li><strong>Usability</strong> - set of attributes that bear on the effort needed for use, and on the individual assessment of such use, by a stated or implied set of users</li>
+	<li><strong>Efficiency</strong> - set of attributes that bear on the relationship between the level of performance of the software and the amount of resources used.</li>
+	<li><strong>Portability</strong> - set of attributes that bear on the ability of software to be transferred from one environment to another</li>
+	<li><strong>Maintainability</strong> - set of attributes that bear on the effort needed to make modifications</li>
+</ul>
+	In each row of the table below, which quality factor is more important with respect to a UHRIS applications? And how strongly?<br>Please check the table below and rate the factors from 1 to 5. If you believe the second quality is more important than the first quality factor, add a negative to your rating to signify your preference.<br>
+
+	(5 = First Quality Factor is way more important than Second Quality Factor)<br>
+	(0 = First Quality Factor is of equal importance with the Second Quality Factor)<br>
+	(-5 = Second Quality Factor is way more important than First Quality Factor)
+</p>
