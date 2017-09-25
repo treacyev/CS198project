@@ -13,7 +13,7 @@
 		<%= form.radio_button :type, 'user' %>
 		<%= label :type_user, 'User' %>
 	</p>
-<% end %>
+
 
 <p>
 	The following are the definitions of each quality factor as stated in the journal <em>“Customizing ISO 9126 quality model for evaluation of B2B applications”</em> to give a better understanding:<br>
@@ -31,3 +31,116 @@
 	(0 = First Quality Factor is of equal importance with the Second Quality Factor)<br>
 	(-5 = Second Quality Factor is way more important than First Quality Factor)
 </p>
+
+
+<table>
+	<thead>
+		<tr> 
+			<th style="border:1px solid black">First Quality Factor</th>
+			<th style="border:1px solid black">Second Quality Factor</th>
+			<th style="border:1px solid black">Stregth of Preference (-5 to 5)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="border:1px solid black">Functionality</td>
+			<td style="border:1px solid black">Reliability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_FR %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Functionality</td>
+			<td style="border:1px solid black">Usability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_FU %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Functionality</td>
+			<td style="border:1px solid black">Efficiency</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_FE %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Functionality</td>
+			<td style="border:1px solid black">Portability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_FP %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Maintainability</td>
+			<td style="border:1px solid black">Portability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_MP %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Maintainability</td>
+			<td style="border:1px solid black">Functionality</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_MF %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Efficiency</td>
+			<td style="border:1px solid black">Maintainability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_EM %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Efficiency</td>
+			<td style="border:1px solid black">Portability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_EP %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Portability</td>
+			<td style="border:1px solid black">Usability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_PU %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Portability</td>
+			<td style="border:1px solid black">Reliability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_PR %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Usability</td>
+			<td style="border:1px solid black">Efficiency</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_UE %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Usability</td>
+			<td style="border:1px solid black">Maintainability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_UM %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Reliability</td>
+			<td style="border:1px solid black">Efficiency</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_RE %></td>
+		</tr>
+
+		<tr>
+			<td style="border:1px solid black">Reliability</td>
+			<td style="border:1px solid black">Usability</td>
+			<td style="border:1px solid black"><%= form.text_field :rate_RU %></td>
+		</tr>
+
+	</tbody>
+</table>
+
+<br>
+
+<button><%= link_to 'Submit', thank_path %></button>
+
+<%= form.submit %>
+<br>
+
+<% end %>
+
+
+
+
+
+
+
