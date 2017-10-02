@@ -1,6 +1,6 @@
 <h1>Take Survey</h1>
 
-<%= form_with scope: :surveys, local: true do |form| %>
+<%= form_for(@survey) do |form| %>
 	<p>
 		<%= form.label :name %>&nbsp;
 		<%= form.text_field :name %>
@@ -8,10 +8,13 @@
 
 	<p>
 		I will answer as a...<br>
-		<%= form.radio_button :type, 'developer', :checked => true %> 
-		<%= label :type_developer, 'Developer' %>
-		<%= form.radio_button :type, 'user' %>
-		<%= label :type_user, 'User' %>
+
+		<!-- Question: user_type is saved as 't' in the database? Why? -->
+
+		<%= form.radio_button :user_type, 'developer', :checked => true %> 
+		Developer
+		<%= form.radio_button :user_type, 'user' %>
+		User
 	</p>
 
 
@@ -45,93 +48,91 @@
 		<tr>
 			<td style="border:1px solid black">Functionality</td>
 			<td style="border:1px solid black">Reliability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_FR %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Functionality</td>
 			<td style="border:1px solid black">Usability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_FU %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Functionality</td>
 			<td style="border:1px solid black">Efficiency</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_FE %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Functionality</td>
 			<td style="border:1px solid black">Portability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_FP %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Maintainability</td>
 			<td style="border:1px solid black">Portability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_MP %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Maintainability</td>
 			<td style="border:1px solid black">Functionality</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_MF %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Efficiency</td>
 			<td style="border:1px solid black">Maintainability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_EM %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Efficiency</td>
 			<td style="border:1px solid black">Portability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_EP %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Portability</td>
 			<td style="border:1px solid black">Usability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_PU %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Portability</td>
 			<td style="border:1px solid black">Reliability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_PR %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Usability</td>
 			<td style="border:1px solid black">Efficiency</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_UE %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Usability</td>
 			<td style="border:1px solid black">Maintainability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_UM %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Reliability</td>
 			<td style="border:1px solid black">Efficiency</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_RE %></td>
+
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black">Reliability</td>
 			<td style="border:1px solid black">Usability</td>
-			<td style="border:1px solid black"><%= form.text_field :rate_RU %></td>
+
 		</tr>
 
 	</tbody>
 </table>
 
 <br>
-
-<%= link_to 'To Thanks', thank_path %>
 
 <%= form.submit %>
 <br>

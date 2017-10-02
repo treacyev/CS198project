@@ -1,3 +1,3 @@
 class Survey < ApplicationRecord
-	serialize :rating,Array
+	serialize :rating, Array
 end
