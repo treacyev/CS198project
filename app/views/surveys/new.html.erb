@@ -1,28 +1,29 @@
 <div class="ui container middle aligned" style="text-align: left">	
-	<div class="ui segment" style="margin-top: 100px">
+	<div class="ui raised segment" style="margin-top: 100px">
 
 		<h1 class="ui center aligned header">Take Survey</h1>
 
-		<%= form_for(@survey) do |form| %>
-			<p>
-				<%= form.label :name %>&nbsp;
-				<%= form.text_field :name %>
-			</p>
-
-			<p>
+		<%= form_for @survey, html: {class: 'ui form'} do |form| %>
+			<div class="required field" style="width: 300px">
+				<%= form.label :name %>
+				<%= form.text_field :name, placeholder: "Last Name, First Name" %>
+			</div>
+			<br>
+			<div class="field">
 				I will answer as a...<br>
+				<div class="ui radio checkbox">
+					<%= form.radio_button :user_type, 'developer', :checked => true %> 
+					<%= form.label :user_type, "Developer" %>
+				</div>
+				<div class="ui radio checkbox" style="margin-left: 20px">
+					<%= form.radio_button :user_type, 'user' %>
+					<%= form.label :user_type, "User" %>
+				</div>
+			</div>
 
-				<!-- Question: user_type is saved as 't' in the database? Why? -->
-
-				<%= form.radio_button :user_type, 'developer', :checked => true %> 
-				Developer
-				<%= form.radio_button :user_type, 'user' %>
-				User
-			</p>
-
-
-		<p>
-			The following are the definitions of each quality factor as stated in the journal <em>“”</em> to give a better understanding:<br>
+			<br>
+		<p style="text-align: center">
+		<!--	The following are the definitions of each quality factor as stated in the journal to give a better understanding:<br>
 		<ul>
 			<li><strong>Functional Suitability</strong></li>
 			<li><strong>Reliability</strong></li>
@@ -32,230 +33,238 @@
 			<li><strong>Compatibility</strong></li>
 			<li><strong>Maintainability</strong></li>
 			<li><strong>Transferability</strong></li>
-		</ul>
+		</ul> -->
 			In each row of the table below, which quality factor is more important with respect to a UHRIS applications? And how strongly?<br>Please check the table below and rate the factors from 1 to 5. If you believe the second quality is more important than the first quality factor, add a negative to your rating to signify your preference.<br>
 
 			(5 = First Quality Factor is way more important than Second Quality Factor)<br>
 			(0 = First Quality Factor is of equal importance with the Second Quality Factor)<br>
 			(-5 = Second Quality Factor is way more important than First Quality Factor)
 		</p>
+		<br>
+		<div class="ui grid container center aligned">
+			<table class="ui selectable celled table" style="width: 800px">
+				<thead>
+					<tr> 
+						<th>First Quality Factor</th>
+						<th>Second Quality Factor</th>
+						<th>Stregth of Preference (-5 to 5)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Functional Suitability</td>
+						<td>Reliability</td>
+						<td><%= form.text_field :fr %></td>
+
+					</tr>
+
+					<tr>
+						<td>Functional Suitability</td>
+						<td>Performance Efficiency</td>
+						<td><%= form.text_field :fp %></td>
+
+					</tr>
+
+					<tr>
+						<td>Functional Suitability</td>
+						<td>Operatability</td>
+						<td><%= form.text_field :fo %></td>
+
+					</tr>
+
+					<tr>
+						<td>Functional Suitability</td>
+						<td>Security</td>
+						<td><%= form.text_field :fs %></td>
+
+					</tr>
+
+					<tr>
+						<td>Functional Suitability</td>
+						<td>Compatibility</td>
+						<td><%= form.text_field :fc %></td>
+
+					</tr>
+
+					<tr>
+						<td>Functional Suitability</td>
+						<td>Maintainability</td>
+						<td><%= form.text_field :fm %></td>
+
+					</tr>
+
+					<tr>
+						<td>Functional Suitability</td>
+						<td>Transferability</td>
+						<td><%= form.text_field :ft %></td>
+
+					</tr>
+
+					<tr>
+						<td>Reliability</td>
+						<td>Performance Efficiency</td>
+						<td><%= form.text_field :rp %></td>
+
+					</tr>
+
+					<tr>
+						<td>Reliability</td>
+						<td>Operability</td>
+						<td><%= form.text_field :ro %></td>
+
+					</tr>
+
+					<tr>
+						<td>Reliability</td>
+						<td>Security</td>
+						<td><%= form.text_field :rs %></td>
+
+					</tr>
+
+					<tr>
+						<td>Reliability</td>
+						<td>Compatibility</td>
+						<td><%= form.text_field :rc %></td>
+
+					</tr>
+
+					<tr>
+						<td>Reliability</td>
+						<td>Maintainability</td>
+						<td><%= form.text_field :rm %></td>
+
+					</tr>
+
+					<tr>
+						<td>Reliability</td>
+						<td>Transferability</td>
+						<td><%= form.text_field :rt %></td>
+
+					</tr>
+
+					<tr>
+						<td>Performance Efficiency</td>
+						<td>Operability</td>
+						<td><%= form.text_field :po %></td>
+
+					</tr>
+
+					<tr>
+						<td>Performance Efficiency</td>
+						<td>Security</td>
+						<td><%= form.text_field :ps %></td>
+
+					</tr>
+
+					<tr>
+						<td>Performance Efficiency</td>
+						<td>Compatibility</td>
+						<td><%= form.text_field :pc %></td>
+
+					</tr>
+
+					<tr>
+						<td>Performance Efficiency</td>
+						<td>Maintainability</td>
+						<td><%= form.text_field :pm %></td>
+
+					</tr>
+
+					<tr>
+						<td>Performance Efficiency</td>
+						<td>Transferability</td>
+						<td><%= form.text_field :pt %></td>
+
+					</tr>
+
+					<tr>
+						<td>Operability</td>
+						<td>Security</td>
+						<td><%= form.text_field :os %></td>
+
+					</tr>
+
+					<tr>
+						<td>Operability</td>
+						<td>Compatibility</td>
+						<td><%= form.text_field :oc %></td>
+
+					</tr>
+
+					<tr>
+						<td>Operability</td>
+						<td>Maintainability</td>
+						<td><%= form.text_field :om %></td>
+
+					</tr>
+
+					<tr>
+						<td>Operability</td>
+						<td>Transferability</td>
+						<td><%= form.text_field :ot %></td>
+
+					</tr>
+
+					<tr>
+						<td>Security</td>
+						<td>Compatibility</td>
+						<td><%= form.text_field :sc %></td>
+
+					</tr>
+
+					<tr>
+						<td>Security</td>
+						<td>Maintainability</td>
+						<td><%= form.text_field :sm %></td>
+
+					</tr>
+
+					<tr>
+						<td>Security</td>
+						<td>Transferability</td>
+						<td><%= form.text_field :st %></td>
+
+					</tr>
+
+					<tr>
+						<td>Compatibility</td>
+						<td>Maintainability</td>
+						<td><%= form.text_field :cm %></td>
+
+					</tr>
+
+					<tr>
+						<td>Compatibility</td>
+						<td>Transferability</td>
+						<td><%= form.text_field :ct %></td>
+
+					</tr>
+
+					<tr>
+						<td>Maintainability</td>
+						<td>Transferability</td>
+						<td><%= form.text_field :mt %></td>
+
+					</tr>
 
 
-		<table>
-			<thead>
-				<tr> 
-					<th style="border:1px solid black">First Quality Factor</th>
-					<th style="border:1px solid black">Second Quality Factor</th>
-					<th style="border:1px solid black">Stregth of Preference (-5 to 5)</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td style="border:1px solid black">Functional Suitability</td>
-					<td style="border:1px solid black">Reliability</td>
-					<td style="border:1px solid black"><%= form.text_field :fr %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Functional Suitability</td>
-					<td style="border:1px solid black">Performance Efficiency</td>
-					<td style="border:1px solid black"><%= form.text_field :fp %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Functional Suitability</td>
-					<td style="border:1px solid black">Operatability</td>
-					<td style="border:1px solid black"><%= form.text_field :fo %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Functional Suitability</td>
-					<td style="border:1px solid black">Security</td>
-					<td style="border:1px solid black"><%= form.text_field :fs %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Functional Suitability</td>
-					<td style="border:1px solid black">Compatibility</td>
-					<td style="border:1px solid black"><%= form.text_field :fc %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Functional Suitability</td>
-					<td style="border:1px solid black">Maintainability</td>
-					<td style="border:1px solid black"><%= form.text_field :fm %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Functional Suitability</td>
-					<td style="border:1px solid black">Transferability</td>
-					<td style="border:1px solid black"><%= form.text_field :ft %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Reliability</td>
-					<td style="border:1px solid black">Performance Efficiency</td>
-					<td style="border:1px solid black"><%= form.text_field :rp %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Reliability</td>
-					<td style="border:1px solid black">Operability</td>
-					<td style="border:1px solid black"><%= form.text_field :ro %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Reliability</td>
-					<td style="border:1px solid black">Security</td>
-					<td style="border:1px solid black"><%= form.text_field :rs %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Reliability</td>
-					<td style="border:1px solid black">Compatibility</td>
-					<td style="border:1px solid black"><%= form.text_field :rc %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Reliability</td>
-					<td style="border:1px solid black">Maintainability</td>
-					<td style="border:1px solid black"><%= form.text_field :rm %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Reliability</td>
-					<td style="border:1px solid black">Transferability</td>
-					<td style="border:1px solid black"><%= form.text_field :rt %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Performance Efficiency</td>
-					<td style="border:1px solid black">Operability</td>
-					<td style="border:1px solid black"><%= form.text_field :po %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Performance Efficiency</td>
-					<td style="border:1px solid black">Security</td>
-					<td style="border:1px solid black"><%= form.text_field :ps %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Performance Efficiency</td>
-					<td style="border:1px solid black">Compatibility</td>
-					<td style="border:1px solid black"><%= form.text_field :pc %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Performance Efficiency</td>
-					<td style="border:1px solid black">Maintainability</td>
-					<td style="border:1px solid black"><%= form.text_field :pm %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Performance Efficiency</td>
-					<td style="border:1px solid black">Transferability</td>
-					<td style="border:1px solid black"><%= form.text_field :pt %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Operability</td>
-					<td style="border:1px solid black">Security</td>
-					<td style="border:1px solid black"><%= form.text_field :os %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Operability</td>
-					<td style="border:1px solid black">Compatibility</td>
-					<td style="border:1px solid black"><%= form.text_field :oc %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Operability</td>
-					<td style="border:1px solid black">Maintainability</td>
-					<td style="border:1px solid black"><%= form.text_field :om %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Operability</td>
-					<td style="border:1px solid black">Transferability</td>
-					<td style="border:1px solid black"><%= form.text_field :ot %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Security</td>
-					<td style="border:1px solid black">Compatibility</td>
-					<td style="border:1px solid black"><%= form.text_field :sc %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Security</td>
-					<td style="border:1px solid black">Maintainability</td>
-					<td style="border:1px solid black"><%= form.text_field :sm %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Security</td>
-					<td style="border:1px solid black">Transferability</td>
-					<td style="border:1px solid black"><%= form.text_field :st %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Compatibility</td>
-					<td style="border:1px solid black">Maintainability</td>
-					<td style="border:1px solid black"><%= form.text_field :cm %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Compatibility</td>
-					<td style="border:1px solid black">Transferability</td>
-					<td style="border:1px solid black"><%= form.text_field :ct %></td>
-
-				</tr>
-
-				<tr>
-					<td style="border:1px solid black">Maintainability</td>
-					<td style="border:1px solid black">Transferability</td>
-					<td style="border:1px solid black"><%= form.text_field :mt %></td>
-
-				</tr>
-
-
-			</tbody>
-		</table>
-
+				</tbody>
+			</table>
+		</div>
 		<br>
 
-		<%= form.submit %>
-		<br>
-
-		<% end %>
+	</div>
+	<br>
+	<div class="ui grid center aligned">
+		<div class="three column row">
+			<div class="column"></div>
+			<div class="column">
+					<%= form.submit class: "positive ui button" %>
+					<br>
+				<% end %>
+			</div>
+			<div class="column"></div>
+		</div>
 	</div>
 </div>
 
