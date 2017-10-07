@@ -1,9 +1,9 @@
 <div class="ui container middle aligned" style="text-align: left">	
-	<div class="ui raised segment" style="margin-top: 100px">
+	<div class="ui raised very padded segment" style="margin-top: 100px">
 
-		<h1 class="ui center aligned header">Take Survey</h1>
+		<h1 class="ui center aligned header">Take Survey</h1><br>
 
-		<%= form_for @survey, html: {class: 'ui form'} do |form| %>
+		<%= form_for (@survey), html: {class: 'ui form'} do |form| %>
 			<div class="required field" style="width: 300px">
 				<%= form.label :name %>
 				<%= form.text_field :name, placeholder: "Last Name, First Name" %>
@@ -259,7 +259,7 @@
 		<div class="three column row">
 			<div class="column"></div>
 			<div class="column">
-					<%= form.submit class: "positive ui button" %>
+					<%= form.submit "Submit Survey", class: "positive ui button" %>
 					<br>
 				<% end %>
 			</div>
