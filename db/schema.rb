@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005140016) do
+ActiveRecord::Schema.define(version: 20171008064423) do
 
   create_table "surveys", force: :cascade do |t|
     t.string "name"
@@ -45,14 +45,14 @@ ActiveRecord::Schema.define(version: 20171005140016) do
     t.integer "cm"
     t.integer "ct"
     t.integer "mt"
-    t.integer "f_weight"
-    t.integer "r_weight"
-    t.integer "p_weight"
-    t.integer "o_weight"
-    t.integer "s_weight"
-    t.integer "c_weight"
-    t.integer "m_weight"
-    t.integer "t_weight"
+    t.float "f_weight"
+    t.float "r_weight"
+    t.float "p_weight"
+    t.float "o_weight"
+    t.float "s_weight"
+    t.float "c_weight"
+    t.float "m_weight"
+    t.float "t_weight"
   end
 
 end
