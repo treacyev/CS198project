@@ -1,4 +1,4 @@
-require 'Matrix'
+require 'matrix'
 
 class SurveysController < ApplicationController
 
