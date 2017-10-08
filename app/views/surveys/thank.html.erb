@@ -1,5 +1,31 @@
 <div class="ui container middle aligned">	
 	<div class="ui raised segment" style="margin-top: 100px; height: 500px">
 		<h2 class="ui center aligned header">Thank you for answering our survey!</h2>
+		
+		As a <strong><%= @user_type %></strong>, these are the obtained weights of the 8 quality characteristics based on your answers.
+		<br>
+		<br>Functional Suitability: <strong><%= @f %>% </strong>
+		<br>Reliability: <strong><%= @r %>% </strong>
+		<br>Performance Efficiency: <strong><%= @p %>% </strong>
+		<br>Operability: <strong><%= @o %>% </strong>
+		<br>Security: <strong><%= @s %>% </strong>
+		<br>Compatibility: <strong><%= @c %>% </strong>
+		<br>Maintainability: <strong><%= @m %>% </strong>
+		<br>Transferability: <strong><%= @t %>% </strong>
+		
+		<br>
+		<br>
+		
+		These are the <strong>average</strong> obtained weights of the 8 quality characteristics based on all <strong><%= @user_type %></strong>'s answers.
+		<br>
+		<br>Functional Suitability: <i> ~di ko pa alam pano~ </i>
+		<br>Reliability: <i> ~di ko pa alam pano~ </i>
+		<br>Performance Efficiency: <i> ~di ko pa alam pano~ </i>
+		<br>Operability: <i> ~di ko pa alam pano~ </i>
+		<br>Security: <i> ~di ko pa alam pano~ </i>
+		<br>Compatibility: <i> ~di ko pa alam pano~ </i>
+		<br>Maintainability: <i> ~di ko pa alam pano~ </i>
+		<br>Transferability: <i> ~di ko pa alam pano~ </i>
+		
 	</div>
 </div>

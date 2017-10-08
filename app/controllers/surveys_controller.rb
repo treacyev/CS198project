@@ -9,13 +9,20 @@ class SurveysController < ApplicationController
 
     # redirects to Thank You page
 	def thank
+        @f = ($global_f * 100).round(2)
+        @r = ($global_r * 100).round(2)
+        @p = ($global_p * 100).round(2)
+        @o = ($global_o * 100).round(2)
+        @s = ($global_s * 100).round(2)
+        @c = ($global_c * 100).round(2)
+        @m = ($global_m * 100).round(2)
+        @t = ($global_t * 100).round(2)
+        @user_type = $global_user_type
 	end
 
     # called when the Submit button is clicked
 	def create
 		@survey=Survey.new(survey_params)
-
-
 
    		if @survey.save
      	  flash[:notice]="Thank you for answering this survey!"
@@ -184,7 +191,18 @@ class SurveysController < ApplicationController
             @survey.m_weight = normalized[6].abs
             @survey.t_weight = normalized[7].abs
 
+            $global_f = @survey.f_weight
+            $global_r = @survey.r_weight
+            $global_p = @survey.p_weight
+            $global_o = @survey.o_weight
+            $global_s = @survey.s_weight
+            $global_c = @survey.c_weight
+            $global_m = @survey.m_weight
+            $global_t = @survey.t_weight
+            $global_user_type = @survey.user_type
+
             @survey.save
+
             redirect_to :action => 'thank'
     	else
      	  flash[:notice]="Please answer all fields."
