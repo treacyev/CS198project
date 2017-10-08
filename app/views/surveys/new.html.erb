@@ -4,6 +4,20 @@
 		<h1 class="ui center aligned header">Take Survey</h1><br>
 
 		<%= form_for (@survey), html: {class: 'ui form'} do |form| %>
+			<% if @survey.errors.any? %>
+			    <div id="error_explanation" class="ui message">
+			      <h2 class="ui header">
+			        <%= pluralize(@survey.errors.count, "error") %> prohibited
+			        this survey form from being submitted:
+			      </h2>
+			      <ul class="ui list">
+			        <% @survey.errors.full_messages.each do |msg| %>
+			          <li class="item"><%= msg %></li>
+			        <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+
 			<div class="required field" style="width: 300px">
 				<%= form.label :name %>
 				<%= form.text_field :name, placeholder: "Last Name, First Name" %>
