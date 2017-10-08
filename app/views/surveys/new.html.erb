@@ -5,7 +5,7 @@
 
 		<%= form_for (@survey), html: {class: 'ui form'} do |form| %>
 			<% if @survey.errors.any? %>
-			    <div id="error_explanation" class="ui message">
+			    <div id="error_explanation" class="ui message" style="height: 200px; overflow: scroll; overflow-x: hidden">
 			      <h2 class="ui header">
 			        <%= pluralize(@survey.errors.count, "error") %> prohibited
 			        this survey form from being submitted:
