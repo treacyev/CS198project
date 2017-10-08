@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .ui.raised.segment {
+ 	overflow: scroll;
+ 	overflow-x: hidden;
+ }

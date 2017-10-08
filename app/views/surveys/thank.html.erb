@@ -1,22 +1,82 @@
 <div class="ui container middle aligned">	
-	<div class="ui raised segment" style="margin-top: 100px; height: 500px">
-		<h2 class="ui center aligned header">Thank you for answering our survey!</h2>
+	<div class="ui raised segment" style="margin-top: 100px; height: 500px; text-align: center">
+		<h1 class="ui center aligned header" style="margin-bottom: 50px">Thank you for answering our survey!</h1>
 		
 		As a <strong><%= @user_type %></strong>, these are the obtained weights of the 8 quality characteristics based on your answers.
 		<br>
-		<br>Functional Suitability: <strong><%= @f %>% </strong>
-		<br>Reliability: <strong><%= @r %>% </strong>
-		<br>Performance Efficiency: <strong><%= @p %>% </strong>
-		<br>Operability: <strong><%= @o %>% </strong>
-		<br>Security: <strong><%= @s %>% </strong>
-		<br>Compatibility: <strong><%= @c %>% </strong>
-		<br>Maintainability: <strong><%= @m %>% </strong>
-		<br>Transferability: <strong><%= @t %>% </strong>
+		<div class="ui mini four statistics" style="margin-top: 70px">
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @f %>%
+		    </div>
+		    <div class="label">
+		      Functional Suitability
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @r %>%
+		    </div>
+		    <div class="label">
+		      Reliability
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @p %>%
+		    </div>
+		    <div class="label">
+		      Performance Efficiency
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @o %>%
+		    </div>
+		    <div class="label">
+		      Operability
+		    </div>
+		  </div>
+		</div>
+		<div class="ui mini four statistics" style="margin-top: 20px">
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @s %>%
+		    </div>
+		    <div class="label">
+		      Security
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @c %>%
+		    </div>
+		    <div class="label">
+		      Compatibility
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @m %>%
+		    </div>
+		    <div class="label">
+		      Maintainability
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @t %>%
+		    </div>
+		    <div class="label">
+		      Transferability
+		    </div>
+		  </div>
+		</div>
 		
 		<br>
 		<br>
 		
-		These are the <strong>average</strong> obtained weights of the 8 quality characteristics based on all <strong><%= @user_type %></strong>'s answers.
+		<!-- These are the <strong>average</strong> obtained weights of the 8 quality characteristics based on all <strong><%= @user_type %></strong>'s answers.
 		<br>
 		<br>Functional Suitability: <i> ~di ko pa alam pano~ </i>
 		<br>Reliability: <i> ~di ko pa alam pano~ </i>
@@ -25,7 +85,7 @@
 		<br>Security: <i> ~di ko pa alam pano~ </i>
 		<br>Compatibility: <i> ~di ko pa alam pano~ </i>
 		<br>Maintainability: <i> ~di ko pa alam pano~ </i>
-		<br>Transferability: <i> ~di ko pa alam pano~ </i>
+		<br>Transferability: <i> ~di ko pa alam pano~ </i> -->
 		
 	</div>
 </div>
