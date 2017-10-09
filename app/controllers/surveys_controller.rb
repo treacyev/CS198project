@@ -19,9 +19,41 @@ class SurveysController < ApplicationController
         @t = ($global_t * 100).round(2)
         @user_type = $global_user_type
 
+        if (@user_type == 'user')
+            @result = Survey.where("user_type == 'user'")
+        elsif (@user_type == 'developer')
+            @result = Survey.where("user_type == 'developer'")
+        end
 
-        @result = Survey.find_by user_type: 'user'
-        @test = @result.id
+        f_sum = 0.0
+        r_sum = 0.0
+        p_sum = 0.0
+        o_sum = 0.0
+        s_sum = 0.0
+        c_sum = 0.0
+        m_sum = 0.0
+        t_sum = 0.0
+
+        for x in 0..(@result.size-1)
+            f_sum = f_sum + @result[x].f_weight
+            r_sum = r_sum + @result[x].r_weight
+            p_sum = p_sum + @result[x].p_weight
+            o_sum = o_sum + @result[x].o_weight
+            s_sum = s_sum + @result[x].s_weight
+            c_sum = c_sum + @result[x].c_weight
+            m_sum = m_sum + @result[x].m_weight
+            t_sum = t_sum + @result[x].t_weight
+        end
+
+        @f_ave = ((f_sum / @result.size) * 100).round(2)
+        @r_ave = ((r_sum / @result.size) * 100).round(2)
+        @p_ave = ((p_sum / @result.size) * 100).round(2)
+        @o_ave = ((o_sum / @result.size) * 100).round(2)
+        @s_ave = ((s_sum / @result.size) * 100).round(2)
+        @c_ave = ((c_sum / @result.size) * 100).round(2)
+        @m_ave = ((m_sum / @result.size) * 100).round(2)
+        @t_ave = ((t_sum / @result.size) * 100).round(2)
+
 
 	end
 
