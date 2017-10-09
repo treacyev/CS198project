@@ -20,9 +20,9 @@ class SurveysController < ApplicationController
         @user_type = $global_user_type
 
         if (@user_type == 'user')
-            @result = Survey.where("user_type == 'user'")
+            @result = Survey.where("user_type = 'user'")
         elsif (@user_type == 'developer')
-            @result = Survey.where("user_type == 'developer'")
+            @result = Survey.where("user_type = 'developer'")
         end
 
         f_sum = 0.0
