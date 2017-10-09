@@ -4,7 +4,7 @@
 		
 		As a <strong><%= @user_type %></strong>, these are the obtained weights of the 8 quality characteristics based on your answers.
 		<br>
-		<div class="ui mini green four statistics" style="margin-top: 70px">
+		<div class="ui mini green four statistics" style="margin-top: 30px">
 		  <div class="statistic">
 		    <div class="value">
 		      <%= @f %>%
@@ -75,31 +75,79 @@
 		
 		<br>
 		<br>
-		
-		
-		
-		From Database:
-		<br>Functional Suitability: <%= @f_ave %>%
-		<br>Reliability: <%= @r_ave %>%
-		<br>Performance Efficiency: <%= @p_ave %>%
-		<br>Operability: <%= @o_ave %>%
-		<br>Security: <%= @s_ave %>%
-		<br>Compatibility: <%= @c_ave %>%
-		<br>Maintainability: <%= @m_ave %>%
-		<br>Transferability: <%= @t_ave %>%
-		
-		
-		
-		<!-- These are the <strong>average</strong> obtained weights of the 8 quality characteristics based on all <strong><%= @user_type %></strong>'s answers.
 		<br>
-		<br>Functional Suitability: <i> ~di ko pa alam pano~ </i>
-		<br>Reliability: <i> ~di ko pa alam pano~ </i>
-		<br>Performance Efficiency: <i> ~di ko pa alam pano~ </i>
-		<br>Operability: <i> ~di ko pa alam pano~ </i>
-		<br>Security: <i> ~di ko pa alam pano~ </i>
-		<br>Compatibility: <i> ~di ko pa alam pano~ </i>
-		<br>Maintainability: <i> ~di ko pa alam pano~ </i>
-		<br>Transferability: <i> ~di ko pa alam pano~ </i> -->
+		<br>
+		These are the <strong>average</strong> obtained weights of the 8 quality characteristics based on all <strong><%= @user_type %></strong>'s answers.
+		<br>
+		<div class="ui mini green four statistics" style="margin-top: 30px">
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @f_ave %>%
+		    </div>
+		    <div class="label">
+		      Functional Suitability
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @r_ave %>%
+		    </div>
+		    <div class="label">
+		      Reliability
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @p_ave %>%
+		    </div>
+		    <div class="label">
+		      Performance Efficiency
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @o_ave %>%
+		    </div>
+		    <div class="label">
+		      Operability
+		    </div>
+		  </div>
+		</div>
+		<div class="ui mini green four statistics" style="margin-top: 20px">
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @s_ave %>%
+		    </div>
+		    <div class="label">
+		      Security
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @c_ave %>%
+		    </div>
+		    <div class="label">
+		      Compatibility
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @m_ave %>%
+		    </div>
+		    <div class="label">
+		      Maintainability
+		    </div>
+		  </div>
+		  <div class="statistic">
+		    <div class="value">
+		      <%= @t_ave %>%
+		    </div>
+		    <div class="label">
+		      Transferability
+		    </div>
+		  </div>
+		</div>
+	
 		
 	</div>
 </div>
