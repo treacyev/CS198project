@@ -20,8 +20,8 @@ class SurveysController < ApplicationController
         @user_type = $global_user_type
 
 
-
-        # @test = Survey.all(:group => "user_type")
+        @result = Survey.find_by user_type: 'user'
+        @test = @result.id
 
 	end
 
