@@ -179,7 +179,14 @@ class SurveysController < ApplicationController
 
             # solve for the normalize weight vector
             not_normalized = ei_vectors[largest_ei_index]
-            normalized = not_normalized.normalize
+
+            # get the sum of the value in the not_normalized weights vector
+            sum = 0.0
+            for x in not_normalized
+                sum = sum + x
+            end
+            normalized = not_normalized / sum
+            # normalized = not_normalized.normalize
 
             # assign the computed weights to the params for database
             @survey.f_weight = normalized[0].abs
