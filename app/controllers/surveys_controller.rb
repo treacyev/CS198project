@@ -18,6 +18,11 @@ class SurveysController < ApplicationController
         @m = ($global_m * 100).round(2)
         @t = ($global_t * 100).round(2)
         @user_type = $global_user_type
+
+
+
+        # @test = Survey.all(:group => "user_type")
+
 	end
 
     # called when the Submit button is clicked
