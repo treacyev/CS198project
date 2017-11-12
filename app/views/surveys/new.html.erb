@@ -48,216 +48,596 @@
 			<li><strong>Maintainability</strong> - this characteristic represents the degree of effectiveness and efficiency with which a product or system can be modified to improve it, correct it or adapt it to changes in environment, and in requirements.</li>
 			<li><strong>Transferability</strong> - this characteristic refers to the degree of effetiveness and efficiency with which a system, product or component can be transferred from one hardware, software or other operational or usage environment to another.</li>
 		</ul>
-			In each row of the table below, which quality factor is more important with respect to a UHRIS applications? And how strongly?<br>Please check the table below and rate the factors from 1 to 5. If you believe the second quality is more important than the first quality factor, add a negative to your rating to signify your preference.<br>
-
-			(5 = First Quality Factor is way more important than Second Quality Factor)<br>
-			(1 or -1 = First Quality Factor is of equal importance with the Second Quality Factor)<br>
-			(-5 = Second Quality Factor is way more important than First Quality Factor)
 		</p>
 		<br>
 		<div class="ui grid container center aligned">
-			<table class="ui selectable celled table" style="width: 800px">
-				<thead>
-					<tr> 
-						<th>First Quality Factor</th>
-						<th>Second Quality Factor</th>
-						<th>Strength of Preference (-5 to 5)</th>
-					</tr>
-				</thead>
+			<table class="ui celled padded table" style="width: 800px">
 				<tbody>
 					<tr>
-						<td>Functional Suitability</td>
-						<td>Reliability</td>
-						<td><%= form.text_field :fr %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Functional Suitability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Reliability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Functional Suitability</td>
-						<td>Performance Efficiency</td>
-						<td><%= form.text_field :fp %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Functional Suitability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Performance Efficiency</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Functional Suitability</td>
-						<td>Operability</td>
-						<td><%= form.text_field :fo %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Functional Suitability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Operability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Functional Suitability</td>
-						<td>Security</td>
-						<td><%= form.text_field :fs %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Functional Suitability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Security</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Functional Suitability</td>
-						<td>Compatibility</td>
-						<td><%= form.text_field :fc %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Functional Suitability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Compatibility</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Functional Suitability</td>
-						<td>Maintainability</td>
-						<td><%= form.text_field :fm %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Functional Suitability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Maintainability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Functional Suitability</td>
-						<td>Transferability</td>
-						<td><%= form.text_field :ft %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Functional Suitability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Transferability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Reliability</td>
-						<td>Performance Efficiency</td>
-						<td><%= form.text_field :rp %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Reliability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Performance Efficiency</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Reliability</td>
-						<td>Operability</td>
-						<td><%= form.text_field :ro %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Reliability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Operability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Reliability</td>
-						<td>Security</td>
-						<td><%= form.text_field :rs %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Reliability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Security</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Reliability</td>
-						<td>Compatibility</td>
-						<td><%= form.text_field :rc %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Reliability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Compatibility</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Reliability</td>
-						<td>Maintainability</td>
-						<td><%= form.text_field :rm %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Reliability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Maintainability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Reliability</td>
-						<td>Transferability</td>
-						<td><%= form.text_field :rt %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Reliability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Transferability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Performance Efficiency</td>
-						<td>Operability</td>
-						<td><%= form.text_field :po %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Performance Efficiency</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Operability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Performance Efficiency</td>
-						<td>Security</td>
-						<td><%= form.text_field :ps %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Performance Efficiency</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Security</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Performance Efficiency</td>
-						<td>Compatibility</td>
-						<td><%= form.text_field :pc %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Performance Efficiency</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Compatibility</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Performance Efficiency</td>
-						<td>Maintainability</td>
-						<td><%= form.text_field :pm %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Performance Efficiency</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Maintainability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Performance Efficiency</td>
-						<td>Transferability</td>
-						<td><%= form.text_field :pt %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Performance Efficiency</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Transferability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Operability</td>
-						<td>Security</td>
-						<td><%= form.text_field :os %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Operability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Security</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Operability</td>
-						<td>Compatibility</td>
-						<td><%= form.text_field :oc %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Operability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Compatibility</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Operability</td>
-						<td>Maintainability</td>
-						<td><%= form.text_field :om %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Operability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Maintainability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Operability</td>
-						<td>Transferability</td>
-						<td><%= form.text_field :ot %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Operability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Transferability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Security</td>
-						<td>Compatibility</td>
-						<td><%= form.text_field :sc %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Security</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Compatibility</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Security</td>
-						<td>Maintainability</td>
-						<td><%= form.text_field :sm %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Security</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Maintainability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Security</td>
-						<td>Transferability</td>
-						<td><%= form.text_field :st %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Security</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Transferability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Compatibility</td>
-						<td>Maintainability</td>
-						<td><%= form.text_field :cm %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Compatibility</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Maintainability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Compatibility</td>
-						<td>Transferability</td>
-						<td><%= form.text_field :ct %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Compatibility</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Transferability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
 					<tr>
-						<td>Maintainability</td>
-						<td>Transferability</td>
-						<td><%= form.text_field :mt %></td>
+						<td>
+							<div class="ui grid">
+								<div class="range">
+								  <input type="range" min="1" max="7" steps="1" value="1">
+								</div>
+
+								<ul class="range-labels">
+								  <li class="active selected">Maintainability</li>
+								  <li>Strongly</li>
+								  <li>Slightly</li>
+								  <li>Equal</li>
+								  <li>Slightly</li>
+								  <li>Strongly</li>
+								  <li>Transferability</li>
+								</ul>
+							</div>
+						</td>
 
 					</tr>
 
@@ -283,7 +663,6 @@
 	</div>
 	
 </div>
-
 
 
 

@@ -14,6 +14,4 @@
  *= require_self
  */
 
- .ui.raised.segment {
- 	overflow: scroll;
- }
+ 
