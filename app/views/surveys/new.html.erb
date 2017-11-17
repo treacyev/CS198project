@@ -40,14 +40,14 @@
 		The following are the definitions of each quality factor as stated in the <strong>ISO/IEC 25010 Standard Model</strong> to give a better understanding:
 		<div class="ui grid" style="margin-right: 100px">
 			<div class="eight column row">
-				<div class="column" id="fs">Functional Suitability</div>
-				<div class="column" id="rel">Reliability</div>
-				<div class="column" id="pe">Performance Efficiency</div>
-				<div class="column" id="op">Operability</div>
-				<div class="column" id="sec">Security</div>
-				<div class="column" id="comp">Compatibility</div>
-				<div class="column" id="maint">Maintainability</div>
-				<div class="column" id="trans">Transferability</div>
+				<div class="column" style="cursor:pointer" id="fs">Functional Suitability</div>
+				<div class="column" style="cursor:pointer" id="rel">Reliability</div>
+				<div class="column" style="cursor:pointer" id="pe">Performance Efficiency</div>
+				<div class="column" style="cursor:pointer" id="op">Operability</div>
+				<div class="column" style="cursor:pointer" id="sec">Security</div>
+				<div class="column" style="cursor:pointer" id="comp">Compatibility</div>
+				<div class="column" style="cursor:pointer" id="maint">Maintainability</div>
+				<div class="column" style="cursor:pointer" id="trans">Transferability</div>
 		</div>
 		</div>
 		</p>
@@ -59,9 +59,9 @@
 						<td>
 							<!-- Functional Suitabiltiy vs Reliability -->
 							<h4 class="ui right floated header">Functional Suitability</h4>
-							<h4 class="ui left floated header">Reliability</h4>
-							<%= form.range_field :fr, :min=>1, :max=>9, :value=>5, :id=>"fr_input_id", :oninput=>"fr_output_id.value = fr_input_id.value"%>
-							<output name="fr_output" id="fr_output_id">5</output>
+							<h4 class="ui left floated header">Reliability</h4>							
+							<%= form.range_field :fr, :min=>1, :max=>9, :value=>5, :id=>"fr_input_id", :onchange=>"fr(this.value)"%>
+							<div name="fr_output" id="fr_output_id">Equally prefers Reliability and Functional Suitability</div>
 							
 						</td>
 					</tr>
@@ -71,8 +71,8 @@
 							<!-- Functional Suitability vs Performance Efficiency -->
 							<h4 class="ui right floated header">Functional Suitability</h4>
 							<h4 class="ui left floated header">Performance Efficiency</h4>
-							<%= form.range_field :fp, :min=>1, :max=>9, :value=>5, :id=>"fp_input_id", :oninput=>"fp_output_id.value = fp_input_id.value"%>
-							<output name="fp_output" id="fp_output_id">5</output>
+							<%= form.range_field :fp, :min=>1, :max=>9, :value=>5, :id=>"fp_input_id", :onchange=>"fp(this.value)"%>
+							<output name="fp_output" id="fp_output_id">Equally prefers Performance Efficiency and Functional Suitability</output>
 						</td>
 
 					</tr>
@@ -82,8 +82,8 @@
 							<!-- Functional Suitability vs Operability -->
 							<h4 class="ui right floated header">Functional Suitability</h4>
 							<h4 class="ui left floated header">Operability</h4>
-							<%= form.range_field :fo, :min=>1, :max=>9, :value=>5, :id=>"fo_input_id", :oninput=>"fo_output_id.value = fo_input_id.value"%>
-							<output name="fo_output" id="fo_output_id">5</output>
+							<%= form.range_field :fo, :min=>1, :max=>9, :value=>5, :id=>"fo_input_id", :onchange=>"fo(this.value)"%>
+							<output name="fo_output" id="fo_output_id">Equally prefers Operability and Functional Suitability</output>
 						</td>
 
 					</tr>
@@ -93,8 +93,8 @@
 							<!-- Functional Suitability vs Security -->
 							<h4 class="ui right floated header">Functional Suitability</h4>
 							<h4 class="ui left floated header">Security</h4>
-							<%= form.range_field :fs, :min=>1, :max=>9, :value=>5, :id=>"fs_input_id", :oninput=>"fs_output_id.value = fs_input_id.value"%>
-							<output name="fs_output" id="fs_output_id">5</output>
+							<%= form.range_field :fs, :min=>1, :max=>9, :value=>5, :id=>"fs_input_id", :onchange=>"fs(this.value)"%>
+							<output name="fs_output" id="fs_output_id">Equally prefers Security and Functional Suitability</output>
 						</td>
 
 					</tr>
@@ -104,8 +104,8 @@
 							<!-- Functional Suitability vs Compatibility -->
 							<h4 class="ui right floated header">Functional Suitability</h4>
 							<h4 class="ui left floated header">Compatibility</h4>
-							<%= form.range_field :fc, :min=>1, :max=>9, :value=>5, :id=>"fc_input_id", :oninput=>"fc_output_id.value = fc_input_id.value"%>
-							<output name="fc_output" id="fc_output_id">5</output>
+							<%= form.range_field :fc, :min=>1, :max=>9, :value=>5, :id=>"fc_input_id", :onchange=>"fc(this.value)"%>
+							<output name="fc_output" id="fc_output_id">Equally prefers Compatibility and Functional Suitability</output>
 						</td>
 
 					</tr>
@@ -115,8 +115,8 @@
 							<!-- Functional Suitability vs Maintainability -->
 							<h4 class="ui right floated header">Functional Suitability</h4>
 							<h4 class="ui left floated header">Maintainability</h4>
-							<%= form.range_field :fm, :min=>1, :max=>9, :value=>5, :id=>"fm_input_id", :oninput=>"fm_output_id.value = fm_input_id.value"%>
-							<output name="fm_output" id="fm_output_id">5</output>
+							<%= form.range_field :fm, :min=>1, :max=>9, :value=>5, :id=>"fm_input_id", :onchange=>"fm(this.value)"%>
+							<output name="fm_output" id="fm_output_id">Equally prefers Maintainability and Functional Suitability</output>
 						</td>
 
 					</tr>
@@ -126,8 +126,8 @@
 							<!-- Functional Suitability vs Transferability -->
 							<h4 class="ui right floated header">Functional Suitability</h4>
 							<h4 class="ui left floated header">Transferability</h4>
-							<%= form.range_field :ft, :min=>1, :max=>9, :value=>5, :id=>"ft_input_id", :oninput=>"ft_output_id.value = ft_input_id.value"%>
-							<output name="ft_output" id="ft_output_id">5</output>
+							<%= form.range_field :ft, :min=>1, :max=>9, :value=>5, :id=>"ft_input_id", :onchange=>"ft(this.value)"%>
+							<output name="ft_output" id="ft_output_id">Equally prefers Transferability and Functional Suitability</output>
 						</td>
 
 					</tr>
@@ -137,8 +137,8 @@
 							<!-- Reliability vs Performance Efficiency -->
 							<h4 class="ui right floated header">Reliability</h4>
 							<h4 class="ui left floated header">Performance Efficiency</h4>
-							<%= form.range_field :rp, :min=>1, :max=>9, :value=>5, :id=>"rp_input_id", :oninput=>"rp_output_id.value = rp_input_id.value"%>
-							<output name="rp_output" id="rp_output_id">5</output>
+							<%= form.range_field :rp, :min=>1, :max=>9, :value=>5, :id=>"rp_input_id", :onchange=>"rp(this.value)"%>
+							<output name="rp_output" id="rp_output_id">Equally prefers Performance Efficiency and Reliability</output>
 						</td>
 
 					</tr>
@@ -148,8 +148,8 @@
 							<!-- Reliability vs Operability -->
 							<h4 class="ui right floated header">Reliability</h4>
 							<h4 class="ui left floated header">Operability</h4>
-							<%= form.range_field :ro, :min=>1, :max=>9, :value=>5, :id=>"ro_input_id", :oninput=>"ro_output_id.value = ro_input_id.value"%>
-							<output name="ro_output" id="ro_output_id">5</output>
+							<%= form.range_field :ro, :min=>1, :max=>9, :value=>5, :id=>"ro_input_id", :onchange=>"ro(this.value)"%>
+							<output name="ro_output" id="ro_output_id">Equally prefers Operability and Reliability</output>
 						</td>
 
 					</tr>
@@ -159,8 +159,8 @@
 							<!-- Reliability vs Security -->
 							<h4 class="ui right floated header">Reliability</h4>
 							<h4 class="ui left floated header">Security</h4>
-							<%= form.range_field :rs, :min=>1, :max=>9, :value=>5, :id=>"rs_input_id", :oninput=>"rs_output_id.value = rs_input_id.value"%>
-							<output name="rs_output" id="rs_output_id">5</output>
+							<%= form.range_field :rs, :min=>1, :max=>9, :value=>5, :id=>"rs_input_id", :onchange=>"rs(this.value)"%>
+							<output name="rs_output" id="rs_output_id">Equally prefers Security and Reliability</output>
 						</td>
 
 					</tr>
@@ -170,8 +170,8 @@
 							<!-- Reliability vs Compatability -->
 							<h4 class="ui right floated header">Reliability</h4>
 							<h4 class="ui left floated header">Compatibility</h4>
-							<%= form.range_field :rc, :min=>1, :max=>9, :value=>5, :id=>"rc_input_id", :oninput=>"rc_output_id.value = rc_input_id.value"%>
-							<output name="rc_output" id="rc_output_id">5</output>
+							<%= form.range_field :rc, :min=>1, :max=>9, :value=>5, :id=>"rc_input_id", :onchange=>"rc(this.value)"%>
+							<output name="rc_output" id="rc_output_id">Equally prefers Compatibility and Reliability</output>
 						</td>
 
 					</tr>
@@ -181,8 +181,8 @@
 							<!-- Reliability vs Maintainability -->
 							<h4 class="ui right floated header">Reliability</h4>
 							<h4 class="ui left floated header">Maintainability</h4>
-							<%= form.range_field :rm, :min=>1, :max=>9, :value=>5, :id=>"rm_input_id", :oninput=>"rm_output_id.value = rm_input_id.value"%>
-							<output name="rm_output" id="rm_output_id">5</output>
+							<%= form.range_field :rm, :min=>1, :max=>9, :value=>5, :id=>"rm_input_id", :onchange=>"rm(this.value)"%>
+							<output name="rm_output" id="rm_output_id">Equally prefers Maintainability and Reliability</output>
 						</td>
 
 					</tr>
@@ -192,8 +192,8 @@
 							<!-- Reliability vs Transferability -->
 							<h4 class="ui right floated header">Reliability</h4>
 							<h4 class="ui left floated header">Transferability</h4>
-							<%= form.range_field :rt, :min=>1, :max=>9, :value=>5, :id=>"rt_input_id", :oninput=>"rt_output_id.value = rt_input_id.value"%>
-							<output name="rt_output" id="rt_output_id">5</output>
+							<%= form.range_field :rt, :min=>1, :max=>9, :value=>5, :id=>"rt_input_id", :onchange=>"rt(this.value)"%>
+							<output name="rt_output" id="rt_output_id">Equally prefers Transferability and Reliability</output>
 						</td>
 
 					</tr>
@@ -203,8 +203,8 @@
 							<!-- Performance Efficiency vs Operability -->
 							<h4 class="ui right floated header">Performance Efficiency</h4>
 							<h4 class="ui left floated header">Operability</h4>
-							<%= form.range_field :po, :min=>1, :max=>9, :value=>5, :id=>"po_input_id", :oninput=>"po_output_id.value = po_input_id.value"%>
-							<output name="po_output" id="po_output_id">5</output>
+							<%= form.range_field :po, :min=>1, :max=>9, :value=>5, :id=>"po_input_id", :onchange=>"po(this.value)"%>
+							<output name="po_output" id="po_output_id">Equally prefers Operability and Performance Efficiency</output>
 						</td>
 
 					</tr>
@@ -214,8 +214,8 @@
 							<!-- Performance Efficiency vs Security -->
 							<h4 class="ui right floated header">Performance Efficiency</h4>
 							<h4 class="ui left floated header">Security</h4>
-							<%= form.range_field :ps, :min=>1, :max=>9, :value=>5, :id=>"ps_input_id", :oninput=>"ps_output_id.value = ps_input_id.value"%>
-							<output name="ps_output" id="ps_output_id">5</output>
+							<%= form.range_field :ps, :min=>1, :max=>9, :value=>5, :id=>"ps_input_id", :onchange=>"ps(this.value)"%>
+							<output name="ps_output" id="ps_output_id">Equally prefers Security and Performance Efficiency</output>
 						</td>
 
 					</tr>
@@ -225,8 +225,8 @@
 							<!-- Performance Efficiency vs Compatibility -->
 							<h4 class="ui right floated header">Performance Efficiency</h4>
 							<h4 class="ui left floated header">Compatibility</h4>
-							<%= form.range_field :pc, :min=>1, :max=>9, :value=>5, :id=>"pc_input_id", :oninput=>"pc_output_id.value = pc_input_id.value"%>
-							<output name="pc_output" id="pc_output_id">5</output>
+							<%= form.range_field :pc, :min=>1, :max=>9, :value=>5, :id=>"pc_input_id", :onchange=>"pc(this.value)"%>
+							<output name="pc_output" id="pc_output_id">Equally prefers Compatibility and Performance Efficiency</output>
 						</td>
 
 					</tr>
@@ -236,8 +236,8 @@
 							<!-- Performance Efficiency vs Maintainability -->
 							<h4 class="ui right floated header">Performance Efficiency</h4>
 							<h4 class="ui left floated header">Maintainability</h4>
-							<%= form.range_field :pm, :min=>1, :max=>9, :value=>5, :id=>"pm_input_id", :oninput=>"pm_output_id.value = pm_input_id.value"%>
-							<output name="pm_output" id="pm_output_id">5</output>
+							<%= form.range_field :pm, :min=>1, :max=>9, :value=>5, :id=>"pm_input_id", :onchange=>"pm(this.value)"%>
+							<output name="pm_output" id="pm_output_id">Equally prefers Maintainability and Performance Efficiency</output>
 						</td>
 
 					</tr>
@@ -247,8 +247,8 @@
 							<!-- Performance Efficiency vs Transferability -->
 							<h4 class="ui right floated header">Performance Efficiency</h4>
 							<h4 class="ui left floated header">Transferability</h4>
-							<%= form.range_field :pt, :min=>1, :max=>9, :value=>5, :id=>"pt_input_id", :oninput=>"pt_output_id.value = pt_input_id.value"%>
-							<output name="pt_output" id="pt_output_id">5</output>
+							<%= form.range_field :pt, :min=>1, :max=>9, :value=>5, :id=>"pt_input_id", :onchange=>"pt(this.value)"%>
+							<output name="pt_output" id="pt_output_id">Equally prefers Transferability and Performance Efficiency</output>
 						</td>
 
 					</tr>
@@ -258,8 +258,8 @@
 							<!-- Operability vs Security -->
 							<h4 class="ui right floated header">Operability</h4>
 							<h4 class="ui left floated header">Security</h4>
-							<%= form.range_field :os, :min=>1, :max=>9, :value=>5, :id=>"os_input_id", :oninput=>"os_output_id.value = os_input_id.value"%>
-							<output name="os_output" id="os_output_id">5</output>
+							<%= form.range_field :os, :min=>1, :max=>9, :value=>5, :id=>"os_input_id", :onchange=>"os(this.value)"%>
+							<output name="os_output" id="os_output_id">Equally prefers Security and Operability</output>
 						</td>
 
 					</tr>
@@ -269,8 +269,8 @@
 							<!-- Operability vs Compatibility -->
 							<h4 class="ui right floated header">Operability</h4>
 							<h4 class="ui left floated header">Compatibility</h4>
-							<%= form.range_field :oc, :min=>1, :max=>9, :value=>5, :id=>"oc_input_id", :oninput=>"oc_output_id.value = oc_input_id.value"%>
-							<output name="oc_output" id="oc_output_id">5</output>
+							<%= form.range_field :oc, :min=>1, :max=>9, :value=>5, :id=>"oc_input_id", :onchange=>"oc(this.value)"%>
+							<output name="oc_output" id="oc_output_id">Equally prefers Compatibility and Operability</output>
 						</td>
 
 					</tr>
@@ -280,8 +280,8 @@
 							<!-- Operability vs Maintainabilitiy -->
 							<h4 class="ui right floated header">Operability</h4>
 							<h4 class="ui left floated header">Maintainability</h4>
-							<%= form.range_field :om, :min=>1, :max=>9, :value=>5, :id=>"om_input_id", :oninput=>"om_output_id.value = om_input_id.value"%>
-							<output name="om_output" id="om_output_id">5</output>
+							<%= form.range_field :om, :min=>1, :max=>9, :value=>5, :id=>"om_input_id", :onchange=>"om(this.value)"%>
+							<output name="om_output" id="om_output_id">Equally prefers Maintainability and Operability</output>
 						</td>
 
 					</tr>
@@ -291,8 +291,8 @@
 							<!-- Operability vs Transferability -->
 							<h4 class="ui right floated header">Operability</h4>
 							<h4 class="ui left floated header">Transferability</h4>
-							<%= form.range_field :ot, :min=>1, :max=>9, :value=>5, :id=>"ot_input_id", :oninput=>"ot_output_id.value = ot_input_id.value"%>
-							<output name="ot_output" id="ot_output_id">5</output>
+							<%= form.range_field :ot, :min=>1, :max=>9, :value=>5, :id=>"ot_input_id", :onchange=>"ot(this.value)"%>
+							<output name="ot_output" id="ot_output_id">Equally prefers Transferability and Operability</output>
 						</td>
 
 					</tr>
@@ -302,8 +302,8 @@
 							<!-- Security vs Compatibility -->
 							<h4 class="ui right floated header">Security</h4>
 							<h4 class="ui left floated header">Compatibility</h4>
-							<%= form.range_field :sc, :min=>1, :max=>9, :value=>5, :id=>"sc_input_id", :oninput=>"sc_output_id.value = sc_input_id.value"%>
-							<output name="sc_output" id="sc_output_id">5</output>
+							<%= form.range_field :sc, :min=>1, :max=>9, :value=>5, :id=>"sc_input_id", :onchange=>"sc(this.value)"%>
+							<output name="sc_output" id="sc_output_id">Equally prefers Compatibility and Security</output>
 						</td>
 
 					</tr>
@@ -313,8 +313,8 @@
 							<!-- Security vs Maintainability -->
 							<h4 class="ui right floated header">Security</h4>
 							<h4 class="ui left floated header">Maintainability</h4>
-							<%= form.range_field :sm, :min=>1, :max=>9, :value=>5, :id=>"sm_input_id", :oninput=>"sm_output_id.value = sm_input_id.value"%>
-							<output name="sm_output" id="sm_output_id">5</output>
+							<%= form.range_field :sm, :min=>1, :max=>9, :value=>5, :id=>"sm_input_id", :onchange=>"sm(this.value)"%>
+							<output name="sm_output" id="sm_output_id">Equally prefers Maintainability and Security</output>
 						</td>
 
 					</tr>
@@ -324,8 +324,8 @@
 							<!-- Security vs Transferability -->
 							<h4 class="ui right floated header">Security</h4>
 							<h4 class="ui left floated header">Transferability</h4>
-							<%= form.range_field :st, :min=>1, :max=>9, :value=>5, :id=>"st_input_id", :oninput=>"st_output_id.value = st_input_id.value"%>
-							<output name="st_output" id="st_output_id">5</output>
+							<%= form.range_field :st, :min=>1, :max=>9, :value=>5, :id=>"st_input_id", :onchange=>"st(this.value)"%>
+							<output name="st_output" id="st_output_id">Equally prefers Transferability and Security</output>
 						</td>
 
 					</tr>
@@ -335,8 +335,8 @@
 							<!-- Compatibility vs Maintainability -->
 							<h4 class="ui right floated header">Compatibility</h4>
 							<h4 class="ui left floated header">Maintainability</h4>
-							<%= form.range_field :cm, :min=>1, :max=>9, :value=>5, :id=>"cm_input_id", :oninput=>"cm_output_id.value = cm_input_id.value"%>
-							<output name="cm_output" id="cm_output_id">5</output>
+							<%= form.range_field :cm, :min=>1, :max=>9, :value=>5, :id=>"cm_input_id", :onchange=>"cm(this.value)"%>
+							<output name="cm_output" id="cm_output_id">Equally prefers Maintainability and Compatibility</output>
 						</td>
 
 					</tr>
@@ -346,8 +346,8 @@
 							<!-- Compatibility vs Transferability -->
 							<h4 class="ui right floated header">Compatibility</h4>
 							<h4 class="ui left floated header">Transferability</h4>
-							<%= form.range_field :ct, :min=>1, :max=>9, :value=>5, :id=>"ct_input_id", :oninput=>"ct_output_id.value = ct_input_id.value"%>
-							<output name="ct_output" id="ct_output_id">5</output>
+							<%= form.range_field :ct, :min=>1, :max=>9, :value=>5, :id=>"ct_input_id", :onchange=>"ct(this.value)"%>
+							<output name="ct_output" id="ct_output_id">Equally prefers Transferability and Compatibility</output>
 						</td>
 
 					</tr>
@@ -357,8 +357,8 @@
 							<!-- Maintainability vs Transferability -->
 							<h4 class="ui right floated header">Maintainability</h4>
 							<h4 class="ui left floated header">Transferability</h4>
-							<%= form.range_field :mt, :min=>1, :max=>9, :value=>5, :id=>"mt_input_id", :oninput=>"mt_output_id.value = mt_input_id.value"%>
-							<output name="mt_output" id="mt_output_id">5</output>
+							<%= form.range_field :mt, :min=>1, :max=>9, :value=>5, :id=>"mt_input_id", :onchange=>"mt(this.value)"%>
+							<output name="mt_output" id="mt_output_id">Equally prefers Transferability and Maintainability</output>
 						</td>
 
 					</tr>
