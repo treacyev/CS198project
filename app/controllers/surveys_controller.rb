@@ -68,123 +68,178 @@ class SurveysController < ApplicationController
 
             # compute for weights of the quality characteristics
 
-            # checks if the input is negative. If so, then convert it to a reciprocal meaning the 2nd quality characteristic is more preferred
-            if @survey.fr < 0
-                @survey.fr = -1.0/@survey.fr
+            if (@survey.fr >= 5)
+                @survey.fr = @survey.fr - 4
+            else
+                @survey.fr = 1 / (@survey.fr - 6).abs
             end
 
-            if @survey.fp < 0
-                @survey.fp = -1.0/@survey.fp
+            if (@survey.fp >= 5)
+                @survey.fp = @survey.fp - 4
+            else
+                @survey.fp = 1 / (@survey.fp - 6).abs
             end
 
-            if @survey.fo < 0
-                @survey.fo = -1.0/@survey.fo
+            if (@survey.fo >= 5)
+                @survey.fo = @survey.fo - 4
+            else
+                @survey.fo = 1 / (@survey.fo - 6).abs
             end
 
-            if @survey.fs < 0
-                @survey.fs = -1.0/@survey.fs
+            if (@survey.fs >= 5)
+                @survey.fs = @survey.fs - 4
+            else
+                @survey.fs = 1 / (@survey.fs - 6).abs
             end
 
-            if @survey.fc < 0
-                @survey.fc = -1.0/@survey.fc
+            if (@survey.fc >= 5)
+                @survey.fc = @survey.fc - 4
+            else
+                @survey.fc = 1 / (@survey.fc - 6).abs
             end
 
-            if @survey.fm < 0
-                @survey.fm = -1.0/@survey.fm
+            if (@survey.fm >= 5)
+                @survey.fm = @survey.fm - 4
+            else
+                @survey.fm = 1 / (@survey.fm - 6).abs
             end
 
-            if @survey.ft < 0
-                @survey.ft = -1.0/@survey.ft
-            end
-
-
-            if @survey.rp < 0
-                @survey.rp = -1.0/@survey.rp
-            end
-
-            if @survey.ro < 0
-                @survey.ro = -1.0/@survey.ro
-            end
-
-            if @survey.rs < 0
-                @survey.rs = -1.0/@survey.rs
-            end
-
-            if @survey.rc < 0
-                @survey.rc = -1.0/@survey.rc
-            end
-
-            if @survey.rm < 0
-                @survey.rm = -1.0/@survey.rm
-            end
-
-            if @survey.rt < 0
-                @survey.rt = -1.0/@survey.rt
+            if (@survey.ft >= 5)
+                @survey.ft = @survey.ft - 4
+            else
+                @survey.ft = 1 / (@survey.ft - 6).abs
             end
 
 
-            if @survey.po < 0
-                @survey.po = -1.0/@survey.po
+            if (@survey.rp >= 5)
+                @survey.rp = @survey.rp - 4
+            else
+                @survey.rp = 1 / (@survey.rp - 6).abs
             end
 
-            if @survey.ps < 0
-                @survey.ps = -1.0/@survey.ps
+            if (@survey.ro >= 5)
+                @survey.ro = @survey.ro - 4
+            else
+                @survey.ro = 1 / (@survey.ro - 6).abs
             end
 
-            if @survey.pc < 0
-                @survey.pc = -1.0/@survey.pc
+            if (@survey.rs >= 5)
+                @survey.rs = @survey.rs - 4
+            else
+                @survey.rs = 1 / (@survey.rs - 6).abs
             end
 
-            if @survey.pm < 0
-                @survey.pm = -1.0/@survey.pm
+            if (@survey.rc >= 5)
+                @survey.rc = @survey.rc - 4
+            else
+                @survey.rc = 1 / (@survey.rc - 6).abs
             end
 
-            if @survey.pt < 0
-                @survey.pt = -1.0/@survey.pt
+            if (@survey.rm >= 5)
+                @survey.rm = @survey.rm - 4
+            else
+                @survey.rm = 1 / (@survey.rm - 6).abs
             end
 
-
-            if @survey.os < 0
-                @survey.os = -1.0/@survey.os
-            end
-
-            if @survey.oc < 0
-                @survey.oc = -1.0/@survey.oc
-            end
-
-            if @survey.om < 0
-                @survey.om = -1.0/@survey.om
-            end
-
-            if @survey.ot < 0
-                @survey.ot = -1.0/@survey.ot
-            end
-
-
-            if @survey.sc < 0
-                @survey.sc = -1.0/@survey.sc
-            end
-
-            if @survey.sm < 0
-                @survey.sm = -1.0/@survey.sm
-            end
-
-            if @survey.st < 0
-                @survey.st = -1.0/@survey.st
+            if (@survey.rt >= 5)
+                @survey.rt = @survey.rt - 4
+            else
+                @survey.rt = 1 / (@survey.rt - 6).abs
             end
 
 
-            if @survey.cm < 0
-                @survey.cm = -1.0/@survey.cm
+            if (@survey.po >= 5)
+                @survey.po = @survey.po - 4
+            else
+                @survey.po = 1 / (@survey.po - 6).abs
             end
 
-            if @survey.ct < 0
-                @survey.ct = -1.0/@survey.ct
+            if (@survey.ps >= 5)
+                @survey.ps = @survey.ps - 4
+            else
+                @survey.ps = 1 / (@survey.ps - 6).abs
+            end
+
+            if (@survey.pc >= 5)
+                @survey.pc = @survey.pc - 4
+            else
+                @survey.pc = 1 / (@survey.pc - 6).abs
+            end
+
+            if (@survey.pm >= 5)
+                @survey.pm = @survey.pm - 4
+            else
+                @survey.pm = 1 / (@survey.pm - 6).abs
+            end
+
+            if (@survey.pt >= 5)
+                @survey.pt = @survey.pt - 4
+            else
+                @survey.pt = 1 / (@survey.pt - 6).abs
             end
 
 
-            if @survey.mt < 0
-                @survey.mt = -1.0/@survey.mt
+            if (@survey.os >= 5)
+                @survey.os = @survey.os - 4
+            else
+                @survey.os = 1 / (@survey.os - 6).abs
+            end
+
+            if (@survey.oc >= 5)
+                @survey.oc = @survey.oc - 4
+            else
+                @survey.oc = 1 / (@survey.oc - 6).abs
+            end
+
+            if (@survey.om >= 5)
+                @survey.om = @survey.om - 4
+            else
+                @survey.om = 1 / (@survey.om - 6).abs
+            end
+
+            if (@survey.ot >= 5)
+                @survey.ot = @survey.ot - 4
+            else
+                @survey.ot = 1 / (@survey.ot - 6).abs
+            end
+
+
+            if (@survey.sc >= 5)
+                @survey.sc = @survey.sc - 4
+            else
+                @survey.sc = 1 / (@survey.sc - 6).abs
+            end
+
+            if (@survey.sm >= 5)
+                @survey.sm = @survey.sm - 4
+            else
+                @survey.sm = 1 / (@survey.sm - 6).abs
+            end
+
+            if (@survey.st >= 5)
+                @survey.st = @survey.st - 4
+            else
+                @survey.st = 1 / (@survey.st - 6).abs
+            end
+
+
+            if (@survey.cm >= 5)
+                @survey.cm = @survey.cm - 4
+            else
+                @survey.cm = 1 / (@survey.cm - 6).abs
+            end
+
+            if (@survey.ct >= 5)
+                @survey.ct = @survey.ct - 4
+            else
+                @survey.ct = 1 / (@survey.ct - 6).abs
+            end
+
+
+            if (@survey.mt >= 5)
+                @survey.mt = @survey.mt - 4
+            else
+                @survey.mt = 1 / (@survey.mt - 6).abs
             end
 
 

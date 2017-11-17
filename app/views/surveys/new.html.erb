@@ -3,7 +3,7 @@
 
 		<h1 class="ui center aligned header">Take Survey</h1><br>
 
-		<%= form_for (@survey), html: {class: 'ui form'} do |form| %>
+		<%= form_for (@survey), html: {class: 'ui form', name: 'getWeightsForm'} do |form| %>
 			<% if @survey.errors.any? %>
 			    <div id="error_explanation" class="ui message" style="height: 200px; overflow: scroll; overflow-x: hidden">
 			      <h2 class="ui header">
@@ -56,18 +56,21 @@
 					<tr>
 						<td>
 							<!-- Functional Suitabiltiy vs Reliability -->
-							<h4 class="ui left floated header">Functional Suitability</h4>
-							<h4 class="ui right floated header">Reliability</h4>
-							<input type="range" min="-5" max="5" display="inline-block">
+							<h4 class="ui right floated header">Functional Suitability</h4>
+							<h4 class="ui left floated header">Reliability</h4>
+							<%= form.range_field :fr, :min=>1, :max=>9, :value=>5, :id=>"fr_input_id", :oninput=>"fr_output_id.value = fr_input_id.value"%>
+							<output name="fr_output" id="fr_output_id">5</output>
+							
 						</td>
 					</tr>
 
 					<tr>
 						<td>
 							<!-- Functional Suitability vs Performance Efficiency -->
-							<h4 class="ui left floated header">Functional Suitability</h4>
-							<h4 class="ui right floated header">Performance Efficiency</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Functional Suitability</h4>
+							<h4 class="ui left floated header">Performance Efficiency</h4>
+							<%= form.range_field :fp, :min=>1, :max=>9, :value=>5, :id=>"fp_input_id", :oninput=>"fp_output_id.value = fp_input_id.value"%>
+							<output name="fp_output" id="fp_output_id">5</output>
 						</td>
 
 					</tr>
@@ -75,9 +78,10 @@
 					<tr>
 						<td>
 							<!-- Functional Suitability vs Operability -->
-							<h4 class="ui left floated header">Functional Suitability</h4>
-							<h4 class="ui right floated header">Operability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Functional Suitability</h4>
+							<h4 class="ui left floated header">Operability</h4>
+							<%= form.range_field :fo, :min=>1, :max=>9, :value=>5, :id=>"fo_input_id", :oninput=>"fo_output_id.value = fo_input_id.value"%>
+							<output name="fo_output" id="fo_output_id">5</output>
 						</td>
 
 					</tr>
@@ -85,9 +89,10 @@
 					<tr>
 						<td>
 							<!-- Functional Suitability vs Security -->
-							<h4 class="ui left floated header">Functional Suitability</h4>
-							<h4 class="ui right floated header">Security</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Functional Suitability</h4>
+							<h4 class="ui left floated header">Security</h4>
+							<%= form.range_field :fs, :min=>1, :max=>9, :value=>5, :id=>"fs_input_id", :oninput=>"fs_output_id.value = fs_input_id.value"%>
+							<output name="fs_output" id="fs_output_id">5</output>
 						</td>
 
 					</tr>
@@ -95,9 +100,10 @@
 					<tr>
 						<td>
 							<!-- Functional Suitability vs Compatibility -->
-							<h4 class="ui left floated header">Functional Suitability</h4>
-							<h4 class="ui right floated header">Compatibility</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Functional Suitability</h4>
+							<h4 class="ui left floated header">Compatibility</h4>
+							<%= form.range_field :fc, :min=>1, :max=>9, :value=>5, :id=>"fc_input_id", :oninput=>"fc_output_id.value = fc_input_id.value"%>
+							<output name="fc_output" id="fc_output_id">5</output>
 						</td>
 
 					</tr>
@@ -105,9 +111,10 @@
 					<tr>
 						<td>
 							<!-- Functional Suitability vs Maintainability -->
-							<h4 class="ui left floated header">Functional Suitability</h4>
-							<h4 class="ui right floated header">Maintainability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Functional Suitability</h4>
+							<h4 class="ui left floated header">Maintainability</h4>
+							<%= form.range_field :fm, :min=>1, :max=>9, :value=>5, :id=>"fm_input_id", :oninput=>"fm_output_id.value = fm_input_id.value"%>
+							<output name="fm_output" id="fm_output_id">5</output>
 						</td>
 
 					</tr>
@@ -115,9 +122,10 @@
 					<tr>
 						<td>
 							<!-- Functional Suitability vs Transferability -->
-							<h4 class="ui left floated header">Functional Suitability</h4>
-							<h4 class="ui right floated header">Transferability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Functional Suitability</h4>
+							<h4 class="ui left floated header">Transferability</h4>
+							<%= form.range_field :ft, :min=>1, :max=>9, :value=>5, :id=>"ft_input_id", :oninput=>"ft_output_id.value = ft_input_id.value"%>
+							<output name="ft_output" id="ft_output_id">5</output>
 						</td>
 
 					</tr>
@@ -125,9 +133,10 @@
 					<tr>
 						<td>
 							<!-- Reliability vs Performance Efficiency -->
-							<h4 class="ui left floated header">Reliability</h4>
-							<h4 class="ui right floated header">Performance Efficiency</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Reliability</h4>
+							<h4 class="ui left floated header">Performance Efficiency</h4>
+							<%= form.range_field :rp, :min=>1, :max=>9, :value=>5, :id=>"rp_input_id", :oninput=>"rp_output_id.value = rp_input_id.value"%>
+							<output name="rp_output" id="rp_output_id">5</output>
 						</td>
 
 					</tr>
@@ -135,9 +144,10 @@
 					<tr>
 						<td>
 							<!-- Reliability vs Operability -->
-							<h4 class="ui left floated header">Reliability</h4>
-							<h4 class="ui right floated header">Operability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Reliability</h4>
+							<h4 class="ui left floated header">Operability</h4>
+							<%= form.range_field :ro, :min=>1, :max=>9, :value=>5, :id=>"ro_input_id", :oninput=>"ro_output_id.value = ro_input_id.value"%>
+							<output name="ro_output" id="ro_output_id">5</output>
 						</td>
 
 					</tr>
@@ -145,9 +155,10 @@
 					<tr>
 						<td>
 							<!-- Reliability vs Security -->
-							<h4 class="ui left floated header">Reliability</h4>
-							<h4 class="ui right floated header">Security</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Reliability</h4>
+							<h4 class="ui left floated header">Security</h4>
+							<%= form.range_field :rs, :min=>1, :max=>9, :value=>5, :id=>"rs_input_id", :oninput=>"rs_output_id.value = rs_input_id.value"%>
+							<output name="rs_output" id="rs_output_id">5</output>
 						</td>
 
 					</tr>
@@ -155,9 +166,10 @@
 					<tr>
 						<td>
 							<!-- Reliability vs Compatability -->
-							<h4 class="ui left floated header">Reliability</h4>
-							<h4 class="ui right floated header">Compatibility</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Reliability</h4>
+							<h4 class="ui left floated header">Compatibility</h4>
+							<%= form.range_field :rc, :min=>1, :max=>9, :value=>5, :id=>"rc_input_id", :oninput=>"rc_output_id.value = rc_input_id.value"%>
+							<output name="rc_output" id="rc_output_id">5</output>
 						</td>
 
 					</tr>
@@ -165,9 +177,10 @@
 					<tr>
 						<td>
 							<!-- Reliability vs Maintainability -->
-							<h4 class="ui left floated header">Reliability</h4>
-							<h4 class="ui right floated header">Maintainability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Reliability</h4>
+							<h4 class="ui left floated header">Maintainability</h4>
+							<%= form.range_field :rm, :min=>1, :max=>9, :value=>5, :id=>"rm_input_id", :oninput=>"rm_output_id.value = rm_input_id.value"%>
+							<output name="rm_output" id="rm_output_id">5</output>
 						</td>
 
 					</tr>
@@ -175,9 +188,10 @@
 					<tr>
 						<td>
 							<!-- Reliability vs Transferability -->
-							<h4 class="ui left floated header">Reliability</h4>
-							<h4 class="ui right floated header">Transferability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Reliability</h4>
+							<h4 class="ui left floated header">Transferability</h4>
+							<%= form.range_field :rt, :min=>1, :max=>9, :value=>5, :id=>"rt_input_id", :oninput=>"rt_output_id.value = rt_input_id.value"%>
+							<output name="rt_output" id="rt_output_id">5</output>
 						</td>
 
 					</tr>
@@ -185,9 +199,10 @@
 					<tr>
 						<td>
 							<!-- Performance Efficiency vs Operability -->
-							<h4 class="ui left floated header">Performance Efficiency</h4>
-							<h4 class="ui right floated header">Operability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Performance Efficiency</h4>
+							<h4 class="ui left floated header">Operability</h4>
+							<%= form.range_field :po, :min=>1, :max=>9, :value=>5, :id=>"po_input_id", :oninput=>"po_output_id.value = po_input_id.value"%>
+							<output name="po_output" id="po_output_id">5</output>
 						</td>
 
 					</tr>
@@ -195,9 +210,10 @@
 					<tr>
 						<td>
 							<!-- Performance Efficiency vs Security -->
-							<h4 class="ui left floated header">Performance Efficiency</h4>
-							<h4 class="ui right floated header">Security</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Performance Efficiency</h4>
+							<h4 class="ui left floated header">Security</h4>
+							<%= form.range_field :ps, :min=>1, :max=>9, :value=>5, :id=>"ps_input_id", :oninput=>"ps_output_id.value = ps_input_id.value"%>
+							<output name="ps_output" id="ps_output_id">5</output>
 						</td>
 
 					</tr>
@@ -205,9 +221,10 @@
 					<tr>
 						<td>
 							<!-- Performance Efficiency vs Compatibility -->
-							<h4 class="ui left floated header">Performance Efficiency</h4>
-							<h4 class="ui right floated header">Compatibility</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Performance Efficiency</h4>
+							<h4 class="ui left floated header">Compatibility</h4>
+							<%= form.range_field :pc, :min=>1, :max=>9, :value=>5, :id=>"pc_input_id", :oninput=>"pc_output_id.value = pc_input_id.value"%>
+							<output name="pc_output" id="pc_output_id">5</output>
 						</td>
 
 					</tr>
@@ -215,9 +232,10 @@
 					<tr>
 						<td>
 							<!-- Performance Efficiency vs Maintainability -->
-							<h4 class="ui left floated header">Performance Efficiency</h4>
-							<h4 class="ui right floated header">Maintainability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Performance Efficiency</h4>
+							<h4 class="ui left floated header">Maintainability</h4>
+							<%= form.range_field :pm, :min=>1, :max=>9, :value=>5, :id=>"pm_input_id", :oninput=>"pm_output_id.value = pm_input_id.value"%>
+							<output name="pm_output" id="pm_output_id">5</output>
 						</td>
 
 					</tr>
@@ -225,9 +243,10 @@
 					<tr>
 						<td>
 							<!-- Performance Efficiency vs Transferability -->
-							<h4 class="ui left floated header">Performance Efficiency</h4>
-							<h4 class="ui right floated header">Transferability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Performance Efficiency</h4>
+							<h4 class="ui left floated header">Transferability</h4>
+							<%= form.range_field :pt, :min=>1, :max=>9, :value=>5, :id=>"pt_input_id", :oninput=>"pt_output_id.value = pt_input_id.value"%>
+							<output name="pt_output" id="pt_output_id">5</output>
 						</td>
 
 					</tr>
@@ -235,9 +254,10 @@
 					<tr>
 						<td>
 							<!-- Operability vs Security -->
-							<h4 class="ui left floated header">Operability</h4>
-							<h4 class="ui right floated header">Security</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Operability</h4>
+							<h4 class="ui left floated header">Security</h4>
+							<%= form.range_field :os, :min=>1, :max=>9, :value=>5, :id=>"os_input_id", :oninput=>"os_output_id.value = os_input_id.value"%>
+							<output name="os_output" id="os_output_id">5</output>
 						</td>
 
 					</tr>
@@ -245,9 +265,10 @@
 					<tr>
 						<td>
 							<!-- Operability vs Compatibility -->
-							<h4 class="ui left floated header">Operability</h4>
-							<h4 class="ui right floated header">Compatibility</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Operability</h4>
+							<h4 class="ui left floated header">Compatibility</h4>
+							<%= form.range_field :oc, :min=>1, :max=>9, :value=>5, :id=>"oc_input_id", :oninput=>"oc_output_id.value = oc_input_id.value"%>
+							<output name="oc_output" id="oc_output_id">5</output>
 						</td>
 
 					</tr>
@@ -255,9 +276,10 @@
 					<tr>
 						<td>
 							<!-- Operability vs Maintainabilitiy -->
-							<h4 class="ui left floated header">Operability</h4>
-							<h4 class="ui right floated header">Maintainability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Operability</h4>
+							<h4 class="ui left floated header">Maintainability</h4>
+							<%= form.range_field :om, :min=>1, :max=>9, :value=>5, :id=>"om_input_id", :oninput=>"om_output_id.value = om_input_id.value"%>
+							<output name="om_output" id="om_output_id">5</output>
 						</td>
 
 					</tr>
@@ -265,9 +287,10 @@
 					<tr>
 						<td>
 							<!-- Operability vs Transferability -->
-							<h4 class="ui left floated header">Operability</h4>
-							<h4 class="ui right floated header">Transferability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Operability</h4>
+							<h4 class="ui left floated header">Transferability</h4>
+							<%= form.range_field :ot, :min=>1, :max=>9, :value=>5, :id=>"ot_input_id", :oninput=>"ot_output_id.value = ot_input_id.value"%>
+							<output name="ot_output" id="ot_output_id">5</output>
 						</td>
 
 					</tr>
@@ -275,9 +298,10 @@
 					<tr>
 						<td>
 							<!-- Security vs Compatibility -->
-							<h4 class="ui left floated header">Security</h4>
-							<h4 class="ui right floated header">Compatibility</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Security</h4>
+							<h4 class="ui left floated header">Compatibility</h4>
+							<%= form.range_field :sc, :min=>1, :max=>9, :value=>5, :id=>"sc_input_id", :oninput=>"sc_output_id.value = sc_input_id.value"%>
+							<output name="sc_output" id="sc_output_id">5</output>
 						</td>
 
 					</tr>
@@ -285,9 +309,10 @@
 					<tr>
 						<td>
 							<!-- Security vs Maintainability -->
-							<h4 class="ui left floated header">Security</h4>
-							<h4 class="ui right floated header">Maintainability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Security</h4>
+							<h4 class="ui left floated header">Maintainability</h4>
+							<%= form.range_field :sm, :min=>1, :max=>9, :value=>5, :id=>"sm_input_id", :oninput=>"sm_output_id.value = sm_input_id.value"%>
+							<output name="sm_output" id="sm_output_id">5</output>
 						</td>
 
 					</tr>
@@ -295,9 +320,10 @@
 					<tr>
 						<td>
 							<!-- Security vs Transferability -->
-							<h4 class="ui left floated header">Security</h4>
-							<h4 class="ui right floated header">Transferability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Security</h4>
+							<h4 class="ui left floated header">Transferability</h4>
+							<%= form.range_field :st, :min=>1, :max=>9, :value=>5, :id=>"st_input_id", :oninput=>"st_output_id.value = st_input_id.value"%>
+							<output name="st_output" id="st_output_id">5</output>
 						</td>
 
 					</tr>
@@ -305,9 +331,10 @@
 					<tr>
 						<td>
 							<!-- Compatibility vs Maintainability -->
-							<h4 class="ui left floated header">Compatibility</h4>
-							<h4 class="ui right floated header">Maintainability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Compatibility</h4>
+							<h4 class="ui left floated header">Maintainability</h4>
+							<%= form.range_field :cm, :min=>1, :max=>9, :value=>5, :id=>"cm_input_id", :oninput=>"cm_output_id.value = cm_input_id.value"%>
+							<output name="cm_output" id="cm_output_id">5</output>
 						</td>
 
 					</tr>
@@ -315,9 +342,10 @@
 					<tr>
 						<td>
 							<!-- Compatibility vs Transferability -->
-							<h4 class="ui left floated header">Compatibility</h4>
-							<h4 class="ui right floated header">Transferability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Compatibility</h4>
+							<h4 class="ui left floated header">Transferability</h4>
+							<%= form.range_field :ct, :min=>1, :max=>9, :value=>5, :id=>"ct_input_id", :oninput=>"ct_output_id.value = ct_input_id.value"%>
+							<output name="ct_output" id="ct_output_id">5</output>
 						</td>
 
 					</tr>
@@ -325,9 +353,10 @@
 					<tr>
 						<td>
 							<!-- Maintainability vs Transferability -->
-							<h4 class="ui left floated header">Maintainability</h4>
-							<h4 class="ui right floated header">Transferability</h4>
-							<input type="range" min="-5" max="5">
+							<h4 class="ui right floated header">Maintainability</h4>
+							<h4 class="ui left floated header">Transferability</h4>
+							<%= form.range_field :mt, :min=>1, :max=>9, :value=>5, :id=>"mt_input_id", :oninput=>"mt_output_id.value = mt_input_id.value"%>
+							<output name="mt_output" id="mt_output_id">5</output>
 						</td>
 
 					</tr>
