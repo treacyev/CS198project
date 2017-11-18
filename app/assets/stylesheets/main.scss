@@ -1,3 +1,7 @@
+body {
+  background-color: #F3F3F3;
+}
+
 .ui.raised.segment {
  	overflow: scroll;
  }
@@ -5,12 +9,12 @@
  .ui.selectable.table {
   overflow: scroll;
   max-width: 800px;
+  margin-top: 20px;
+  height: 500px;
  }
 
  .ui.grid {
-  margin-left: 90px; 
-  margin-top: 10px; 
-  margin-bottom: 10px;
+  margin-top: 10px;
  }
 
 input[type="range"] {
