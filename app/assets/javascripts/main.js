@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 });
 
-var arr = ["Very strongly prefers", "Strongly prefers", "Prefers", "Slightly prefers", "Equally prefers", "Slightly prefers", "Prefers", "Strong prefers", "Very strongly prefers"];
+var arr = ["Very strongly prefers", "Strongly prefers", "Prefers", "Slightly prefers", "Equally prefers", "Slightly prefers", "Prefers", "Strongly prefers", "Very strongly prefers"];
 
 function fr(val) {
 	var chara = "";
